@@ -1,7 +1,7 @@
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
+input.onButtonPressed(Button.A, function () {
     priklad_1()
 })
-function tocici_kruh() {
+function tocici_kruh () {
     diody.showRainbow(1, 360)
     for (let index = 0; index < 10; index++) {
         diody.show()
@@ -9,17 +9,16 @@ function tocici_kruh() {
         basic.pause(100)
     }
 }
-
-input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
+input.onButtonPressed(Button.AB, function () {
     diody.clear()
     basic.pause(500)
     diody.showRainbow(1, 360)
 })
-input.onButtonPressed(Button.B, function on_button_pressed_b() {
+input.onButtonPressed(Button.B, function () {
     tocici_kruh()
 })
-function priklad_1() {
-    for (let index2 = 0; index2 < 24; index2++) {
+function priklad_1 () {
+    for (let index2 = 0; index2 <= 23; index2++) {
         diody.setPixelColor(index2, neopixel.colors(NeoPixelColors.Blue))
         diody.show()
         basic.pause(50)
@@ -27,6 +26,5 @@ function priklad_1() {
         diody.show()
     }
 }
-
-let diody : neopixel.Strip = null
+let diody: neopixel.Strip = null
 diody = neopixel.create(DigitalPin.P0, 8, NeoPixelMode.RGB)
