@@ -1,25 +1,28 @@
 input.onButtonPressed(Button.A, function () {
-    tocici_kruh()
+    priklad_1()
 })
 function tocici_kruh () {
-    for (let pořadí = 0; pořadí <= 80; pořadí++) {
+    diody.showRainbow(1, 360)
+    for (let index = 0; index < 10; index++) {
         diody.show()
         diody.rotate(1)
         basic.pause(100)
     }
 }
+input.onButtonPressed(Button.AB, function () {
+    diody.showRainbow(1, 360)
+})
 input.onButtonPressed(Button.B, function () {
-    priklad_1()
+    tocici_kruh()
 })
 function priklad_1 () {
-    for (let index = 0; index <= 7; index++) {
-        diody.setPixelColor(index, neopixel.colors(NeoPixelColors.Blue))
+    for (let index2 = 0; index2 <= 23; index2++) {
+        diody.setPixelColor(index2, neopixel.colors(NeoPixelColors.Blue))
         diody.show()
         basic.pause(50)
-        diody.setPixelColor(index, neopixel.rgb(16, 16, 16))
+        diody.setPixelColor(index2, neopixel.rgb(16, 16, 16))
         diody.show()
     }
 }
 let diody: neopixel.Strip = null
 diody = neopixel.create(DigitalPin.P0, 8, NeoPixelMode.RGB)
-diody.showRainbow(1, 360)
